@@ -16,3 +16,7 @@ Insecure encryption methods were found in two configuration files (DES):
 
 This could lead to hash cracking (if the attacker would get access) which would leave the attacker with plain text passwords and access trough all users. In both files the encrytion method should be changed to yescrypt and all passwords should be changed. 
 
+### Unbound user is insecure
+
+In /etc/shadow "unbound" user is enabled but no password set. Combined with the fact that empty passwords are allowed in /etc/ssh/sshd_config means that attacker could connect to the VM without having any passwords. User in question also has all sudo access with no password needed in /etc/sudoers giving the attacker root access. Permissions should be striped, ssh config file should be corrected to demand passwords and this user should have a password set.  
+
