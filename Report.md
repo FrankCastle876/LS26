@@ -28,3 +28,10 @@ In /etc/does.conf file permissions are set for all in "users" group with no need
 
 In /etc/ssh/sshd_config.d allowing keys in "ssh_host_echd_key". The key is present. SSH key injection would lead to persistence by an attacker. This has to be deleted from settings.  
 
+### SUID bit set  
+
+SUID bit is set to "pexec". This program is vulnerable with this setting since it would allow an attacker to spawn an elevated shell on the system. SUID bit should be taken from this binary.  
+
+### FTP service  
+
+Ftp service is open on port 21 (only for IPv6). It's version (3.0.5) is vulnerable to CVE-2021-3618 which allows traffic redirection by an attacker compromising it's integrity. Service should be terminated.  
