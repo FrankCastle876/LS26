@@ -39,3 +39,8 @@ Ftp service is open on port 21 (only for IPv6). It's version (3.0.5) is vulnerab
 ### Webserver vulnerabilities  
 
 Podman container was run with --privileged and "/:/mnt" volume allowing container escape, gaining access to the system. Stop and remove this container and run it again with more secure options. 
+
+### Unbound vulnerabilities  
+
+Unbound has remore control enabled over IPv6. This could allow a malicious actor to gain access. This should be disabled for security.  
+
