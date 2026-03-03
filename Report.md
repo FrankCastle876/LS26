@@ -40,6 +40,9 @@ Ftp service is open on port 21 (only for IPv6). It's version (3.0.5) is vulnerab
 
 Podman container was run with --privileged and "/:/mnt" volume allowing container escape, gaining access to the system. Stop and remove this container and run it again with more secure options. 
 
+### MySql misconfiguration  
+
+In /lib/systemd/system/mysql.service the execution command has option "--skip-grant-tables" included. Which would allow any user to connect to the database as any user without providing a password. This option should be edited out, so that users need to provide passwords. 
 ### Unbound vulnerabilities  
 
 Unbound has remore control enabled over IPv6. This could allow a malicious actor to gain access. This should be disabled for security.  
