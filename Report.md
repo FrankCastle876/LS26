@@ -43,7 +43,8 @@ Podman container was run with --privileged and "/:/mnt" volume allowing containe
 ### MySql misconfiguration  
 
 In /lib/systemd/system/mysql.service the execution command has option "--skip-grant-tables" included. Which would allow any user to connect to the database as any user without providing a password. This option should be edited out, so that users need to provide passwords. 
+
 ### Unbound vulnerabilities  
 
-Unbound has remore control enabled over IPv6. This could allow a malicious actor to gain access. This should be disabled for security.  
+Unbound has remore control enabled over IPv6 in file /etc/unbound/unbound.conf.d/remote-control.conf. This could allow a malicious actor to gain access. This should be disabled for security.  
 
