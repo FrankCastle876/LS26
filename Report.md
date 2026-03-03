@@ -6,7 +6,7 @@ SMB service was open on ports 445 and 139. This was not confirmed as malicious, 
 
 ### Port knocking
 
-There is a port knocking service called "knockd" which is shut down but *enabled. Said service could serve as access for attackers after reboot. This should be at least disabled.  
+There is a port knocking service called "knockd" which is shut down but **enabled. Said service could serve as access for attackers after reboot. This should be at least disabled.  
 
 ### Password hashing  
 
