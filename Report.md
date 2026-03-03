@@ -35,3 +35,7 @@ SUID bit is set to "pexec". This program is vulnerable with this setting since i
 ### FTP service  
 
 Ftp service is open on port 21 (only for IPv6). It's version (3.0.5) is vulnerable to CVE-2021-3618 which allows traffic redirection by an attacker compromising it's integrity. Service should be terminated.  
+
+### Webserver vulnerabilities  
+
+Podman container was run with --privileged and "/:/mnt" volume allowing container escape, gaining access to the system. Stop and remove this container and run it again with more secure options. 
