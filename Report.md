@@ -20,3 +20,11 @@ This could lead to hash cracking (if the attacker would get access) which would 
 
 In /etc/shadow "unbound" user is enabled but no password set. Combined with the fact that empty passwords are allowed in /etc/ssh/sshd_config means that attacker could connect to the VM without having any passwords. User in question also has all sudo access with no password needed in /etc/sudoers giving the attacker root access. Permissions should be striped, ssh config file should be corrected to demand passwords and this user should have a password set.  
 
+### Unsecure permissions  
+
+In /etc/does.conf file permissions are set for all in "users" group with no need for a password. This would give an attacker ulimitied access to the system as soon as he gained access to anyone in this group. File should be correct to only allow users in "root" group.
+
+### SSH key added 
+
+In /etc/ssh/sshd_config.d allowing keys in "ssh_host_echd_key". The key is present. SSH key injection would lead to persistence by an attacker. This has to be deleted from settings.  
+
